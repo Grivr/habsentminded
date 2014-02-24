@@ -1,4 +1,4 @@
 habsentminded
 =============
 
-absentminded 2
+Absentminded rewritten in Haskell for a great good.
