@@ -1,4 +1,4 @@
-module Habsentminded where
+module Main where
 
 import System.Exit
 import System.Environment
@@ -185,12 +185,12 @@ readConfig f = do
    rv <- runErrorT $ do
       -- open the configuration file
       cp <- join $ liftIO $ readfile emptyCP{ optionxform = id } f
-      tbo <- get cp "Bt&DD" "textBankOffset"
-      ts <- get cp "Bt&DD" "treeSize"
-      tlo' <- get cp "Bt&DD" "treeLeftOffset"
+      tbo <- get cp "" "textBankOffset"
+      ts <- get cp "" "treeSize"
+      tlo' <- get cp "" "treeLeftOffset"
       let tlo = tlo' + tbo
-      pts <- get cp "Bt&DD" "pointerTableSize"
-      eos <- get cp "Bt&DD" "endOfScreen"
+      pts <- get cp "" "pointerTableSize"
+      eos <- get cp "" "endOfScreen"
       let
         cmo = tlo + 2* ts
         cms = ts + 1
