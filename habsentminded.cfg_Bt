@@ -1,0 +1,8 @@
+#Config for Battletoads (U).nes
+
+[DEFAULT]
+textBankOffset = 0x28010
+treeSize = 0x2B
+treeLeftOffset = 0xE63B
+pointerTableSize = 60
+endOfScreen = 0xFD
