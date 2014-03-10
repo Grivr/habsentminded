@@ -169,15 +169,15 @@ getBitStream input textBase' ptr =  drop (snd ptr) $ Bi.unpack (Bi.fromByteStrin
   where bytes = Bs.drop (fromIntegral textBase' + fromIntegral(fst ptr)) input
 
 ----------------------------------------Config part-------------------------------------------
-data ConfigInfo = ConfigInfo {  textBankOffset :: Int,
-                                treeSize :: Int,
-                                treeLeftOffset :: Int,
+data ConfigInfo = ConfigInfo {  textBankOffset,
+                                treeSize,
+                                treeLeftOffset,
                                 pointerTableSize :: Int,
                                 endOfScreen :: Word8,
-                                charMapOffset :: Int,
-                                charMapSize :: Int,
-                                pointerTableOffset :: Int,
-                                textBase :: Int        
+                                charMapOffset,
+                                charMapSize,
+                                pointerTableOffset,
+                                textBase :: Int 
                              }
 
 readConfig :: String -> IO ConfigInfo
@@ -223,11 +223,11 @@ usage = usageInfo "Usage: habsentminded [-d|e] [input_file output_file]" options
 
 options :: [OptDescr (Options -> Options)]
 options =
-	[ Option "d"     ["decode"]  (NoArg (\opts -> opts {optAction = Decode}))  "decode from ROM"
-	, Option "e"     ["encode"]  (NoArg (\opts -> opts {optAction = Encode}))  "encode from raw binary text"
+  [ Option "d"     ["decode"]  (NoArg (\opts -> opts {optAction = Decode}))  "decode from ROM"
+  , Option "e"     ["encode"]  (NoArg (\opts -> opts {optAction = Encode}))  "encode from raw binary text"
         , Option "h?" ["help"]    (NoArg (\ opts -> opts { optHelp = True }))   "show help"
         , Option "v" ["version"]     (NoArg (\ opts -> opts { optVersion = True })) "show version number"
-	]
+  ]
 
 
 habsentOpts :: [String] -> IO (Options, [String])
