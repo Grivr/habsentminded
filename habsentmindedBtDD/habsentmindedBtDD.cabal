@@ -1,0 +1,19 @@
+name:                habsentmindedBtDD
+version:             0.9.9.0
+synopsis:            NES Battletoads series text tool. Supports Battletoads & Double Dragon - The Ultimate Team (U).nes
+description:         Please see README.md
+homepage:            https://github.com/romhack/habsentminded/habsentmindedBtDD#readme
+license:             MIT
+license-file:        LICENSE
+author:              Griever
+maintainer:          example@example.com
+copyright:           2016 Griever
+category:            Compression
+build-type:          Simple
+cabal-version:       >=1.10
+
+executable habsentmindedBtDD
+  hs-source-dirs:      src
+  main-is:             Main.hs
+  default-language:    Haskell2010
+  build-depends:       base >= 4.7 && < 5, split, bitstream, bytestring, mtl,ConfigFile,containers, transformers
